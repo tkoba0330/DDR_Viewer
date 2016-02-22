@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="DDR_Viewer.MainWindow"
+        Title="MainWindow" 
+    Loaded="Window_Loaded"
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxg:GridControl
+            Grid.Row="0"
+            Name="gridTables"
+            AutoGenerateColumns="AddNew"
+            EnableSmartColumnsGeneration="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CurrentItemChanged="gridTables_CurrentItemChanged"
+            >
+            <dxg:GridControl.View>
+                <dxg:TableView 
+                    ShowTotalSummary="False"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+        <dxg:GridControl
+            Grid.Row="1"
+            Name="gridFields"
+            AutoGenerateColumns="AddNew"
+            EnableSmartColumnsGeneration="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            >
+            <dxg:GridControl.View>
+                <dxg:TableView
+                    ShowTotalSummary="False" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+    </Grid>
+</Window>
